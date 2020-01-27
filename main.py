@@ -8,7 +8,7 @@ range = 50
 
 while not quit:
     random_number = random.randint(1,range)
-    print("A chasm filled with lava lies before you, and a stone bridge stretches out across it.")
+    print("\n\nA chasm filled with lava lies before you, and a stone bridge stretches out across it.")
     print("A guard stands vigilant in front of the bridge.")
     number = input("\nGuard: 'Guess the correct number between 1 and {} and you may pass.' You: ".format(range))
     number = int(number)
@@ -33,8 +33,11 @@ while not quit:
         print("Guard: 'It took you {} tries. That is satisfactory, but not impressive...'".format(count))
     elif count >= 10:
         print("Guard: 'It took you {} tries? That is not very good...".format(count))
+    elif count == 1:
+        print("Guard: 'You guessed it on your first try! that is astounding!'")
     print("Guard: 'You have guessed the number, thus you may now pass.'")
     play_again = input("\nCongratulations! You succesfully passed the guard! would you like to play again? ")
+    play_again = play_again.lower()
     if play_again == "yes":
         quit = False
     else:
